@@ -9,6 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   static const String _title = 'Expense Tracker';
+
+  void startAddNewTransaction(BuildContext ctx) {
+    showModalBottomSheet(context: ctx, builder: (bCtx) {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +21,12 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(_title),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.add),
+              onPressed: null,
+            )
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -33,6 +44,11 @@ class MyApp extends StatelessWidget {
               UserTransactions(),
             ],
           ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {},
         ),
       ),
     );
