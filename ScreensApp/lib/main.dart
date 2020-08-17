@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './screens/tabs_screen.dart';
+import './screens/meal_detail_screen.dart';
 import './screens/categories_screen.dart';
 import './screens/category_meals_screen.dart';
 
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
               title: TextStyle(
-                fontSize: 24,
+                fontSize: 20,
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.bold,
               ),
@@ -34,8 +36,20 @@ class MyApp extends StatelessWidget {
       //route to another page
       initialRoute: '/',
       routes: {
-        '/': (ctx) => CategoriesScreen(),
+        '/': (ctx) => TabsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+
+      //auto generate navigation
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      },
+
+      onUnknownRoute: (settings) {
+        print(settings.arguments);
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
     );
   }
