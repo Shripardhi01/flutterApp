@@ -23,7 +23,7 @@ class ProductDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(loadedProduct.title),
       ),
-      drawer: AppDrawer(),
+      // drawer: AppDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
