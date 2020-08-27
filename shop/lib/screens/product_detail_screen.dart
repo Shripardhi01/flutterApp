@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/products.dart';
-import '../widgets/app_drawer.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   // final String title;
@@ -23,12 +22,10 @@ class ProductDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(loadedProduct.title),
       ),
-      // drawer: AppDrawer(),
       body: SingleChildScrollView(
         child: Column(
-          children: [
+          children: <Widget>[
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
               height: 300,
               width: double.infinity,
               child: Image.network(
@@ -44,12 +41,18 @@ class ProductDetailScreen extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            SizedBox(height: 10),
-            Text(
-              loadedProduct.description,
-              textAlign: TextAlign.center,
-              softWrap: true,
+            SizedBox(
+              height: 10,
             ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              width: double.infinity,
+              child: Text(
+                loadedProduct.description,
+                textAlign: TextAlign.center,
+                softWrap: true,
+              ),
+            )
           ],
         ),
       ),

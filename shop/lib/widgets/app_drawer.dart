@@ -4,14 +4,13 @@ import '../screens/orders_screen.dart';
 import '../screens/user_products_screen.dart';
 
 class AppDrawer extends StatelessWidget {
-  static const routeName = '/';
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        children: [
+        children: <Widget>[
           AppBar(
-            title: Text('Hello FND'),
+            title: Text('Hello Friend!'),
             automaticallyImplyLeading: false,
           ),
           Divider(),
@@ -19,9 +18,10 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.shop),
             title: Text('Shop'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed(routeName);
+              Navigator.of(context).pushReplacementNamed('/');
             },
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.payment),
             title: Text('Orders'),
