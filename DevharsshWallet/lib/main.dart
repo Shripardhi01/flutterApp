@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import './screens/dashboard_screen.dart';
+import './widgets/app_drawer.dart';
 import './screens/auth_screen.dart';
+import './screens/login_screen.dart';
+import './screens/register_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,33 +15,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Devharsh Wallet',
       theme: ThemeData(
         primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: DashboardScreen(),
+      routes: {
+        LoginScreen.routeName: (ctx) => LoginScreen(),
+        RegisterScreen.routeName: (ctx) => RegisterScreen(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Devharsh Wallet'),
       ),
-      body: AuthScreen(),
+      body: DashboardScreen(),
+      // drawer: AppDrawer(),
     );
   }
 }
