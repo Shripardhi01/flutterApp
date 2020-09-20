@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 
+import '../screens/view_investees_screen.dart';
 import '../screens/add_investment_screen.dart';
 import '../screens/view_accounts_screen.dart';
+import '../screens/profile_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -70,14 +72,16 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.list),
             title: Text('View Investees'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed('/');
+              Navigator.of(context)
+                  .pushReplacementNamed(ViewInvesteesScreen.routeName);
             },
           ),
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Profile'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed('/');
+              Navigator.of(context)
+                  .pushReplacementNamed(ProfileScreen.routeName);
             },
           ),
           ListTile(
@@ -88,7 +92,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.contacts),
+            leading: Icon(Icons.call),
             title: Text('Support / Contact Us'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed('/');

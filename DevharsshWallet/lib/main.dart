@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Devharsh Wallet'),
       ),
       body: DashboardScreen(),
-      // drawer: AppDrawer(),
+      drawer: AppDrawer(),
     );
   }
 }

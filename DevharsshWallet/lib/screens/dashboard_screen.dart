@@ -4,6 +4,8 @@ import './add_investment_screen.dart';
 import './view_accounts_screen.dart';
 import '../widgets/app_drawer.dart';
 import './account_screen.dart';
+import './view_investees_screen.dart';
+import './profile_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
@@ -25,6 +27,8 @@ class DashboardScreen extends StatelessWidget {
         AddInvestmentScreen.routeName: (ctx) => AddInvestmentScreen(),
         ViewAccountsScreen.routeName: (ctx) => ViewAccountsScreen(),
         AccountScreen.routeName: (ctx) => AccountScreen(),
+        ViewInvesteesScreen.routeName: (ctx) => ViewInvesteesScreen(),
+        ProfileScreen.routeName: (ctx) => ProfileScreen(),
       },
     );
   }

@@ -10,19 +10,22 @@ class Accounts with ChangeNotifier {
         depositeAmount: 5000,
         date: '12/09/2020',
         roi: 1.5,
-        status: 'Approved'),
+        status: 'Approved',
+        code: 'ak'),
     Account(
         acountNo: '2',
         depositeAmount: 10000,
         date: '15/09/2020',
         roi: 1.5,
-        status: 'Pending'),
+        status: 'Pending',
+        code: 'ak'),
     Account(
         acountNo: '3',
         depositeAmount: 15000,
         date: '02/08/2020',
         roi: 1.5,
-        status: 'Approved'),
+        status: 'Approved',
+        code: 'ak'),
   ];
 
   List<Account> get accounts {

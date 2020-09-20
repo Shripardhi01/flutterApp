@@ -12,6 +12,7 @@ class AccountScreen extends StatelessWidget {
     final selectedAccount = Accounts().getAccountById(accountId);
     return Scaffold(
       appBar: AppBar(
+        elevation: 4,
         title: Text('Payments' + accountId),
         actions: [
           PopupMenuButton(
