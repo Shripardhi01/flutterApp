@@ -10,7 +10,7 @@ class AppDrawer extends StatelessWidget {
       title: Text(
         title,
         style: TextStyle(
-          fontSize: 20,
+          fontSize: 16,
         ),
       ),
       onTap: tapHandler,
